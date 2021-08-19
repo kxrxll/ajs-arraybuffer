@@ -1,6 +1,12 @@
-// TODO: write your code here
-import sum from './basic';
+class ArrayBufferConverter {
+  constructor(buffer) {
+    this.buffer = buffer;
+  }
 
-console.log('worked');
+  toString() {
+    const arr = new Uint8Array(this.buffer);
+    return String.fromCharCode(...arr);
+  }
+}
 
-console.log(sum([1, 2]));
+export default ArrayBufferConverter;
